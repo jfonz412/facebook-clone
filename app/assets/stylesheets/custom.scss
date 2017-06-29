@@ -1,3 +1,33 @@
 /*these lines include the entire bootstrap and css framework*/
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  color: grey;
+  background-color: white;
+  a {
+    color: gray;
+  }
+  ul {
+    float: left;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
+
+#foot-container {
+	background-color: white;
+	height: 100px;
+}
+
+body {
+	background-color: rgb(233, 235, 238)
+}
