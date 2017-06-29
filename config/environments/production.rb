@@ -10,6 +10,9 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
+  # Devise mailer for production (check tutorial if this doesn't work)
+  config.action_mailer.default_url_options = { host: 'https://mysterious-anchorage-62529.herokuapp.com/'}
+
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
