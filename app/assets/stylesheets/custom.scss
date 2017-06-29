@@ -2,6 +2,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* header */
+.navbar.navbar-default {
+  background-color: #3b5998;
+  color: white;
+  a {
+    color: white;
+    &:hover{
+      color:#3b5998;
+    } 
+  }
+}
 
 /* footer */
 
@@ -28,14 +39,21 @@ footer {
 	height: 100px;
 }
 
+/* misc body elements */
+
 body {
 	background-color: rgb(233, 235, 238)
 }
 
-h1 {
+h1, h2 {
   text-align: center;
 }
 
 p {
 	margin-left:10px;
+}
+
+/* devise forms */
+#new_user.new_user {
+  margin-left: 45px;
 }
