@@ -1,9 +1,6 @@
 require 'test_helper'
 
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
-  def setup
-    @user = User.create(email: "foo@bar.com", password: "pass123")
-  end
 
   test "get root url" do
   	get root_url
@@ -35,12 +32,13 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
       assert_select "a[href=?]", new_user_session_path
       assert_select "a[href=?]", new_user_registration_path
   end
-
-  #test "layout when logged in" do
-      # need a way to sign in user
-      #assert_select "a[href=?]", home_path, count: 2
-      #assert_select "a[href=?]", about_path
-      #assert_select "a[href=?]", contact_path
-      #assert_select "a[href=?]", destroy_user_session_path
-  #end
+=begin
+  test "layout when logged in" do
+      sign_in @user
+      assert_select "a[href=?]", home_path, count: 2
+      assert_select "a[href=?]", about_path
+      assert_select "a[href=?]", contact_path
+      assert_select "a[href=?]", destroy_user_session_path
+  end
+=end
 end
