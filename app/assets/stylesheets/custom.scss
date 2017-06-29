@@ -45,7 +45,7 @@ body {
 	background-color: rgb(233, 235, 238)
 }
 
-h1, h2 {
+h1 {
   text-align: center;
 }
 
@@ -54,6 +54,11 @@ p {
 }
 
 /* devise forms */
-#new_user.new_user {
-  margin-left: 45px;
+.devise-form {
+	margin-left: 35px;
 }
+
+.devise-heading {
+	text-align: center;
+}
+
