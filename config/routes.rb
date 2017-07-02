@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'friendships/create'
+
+  get 'friendships/destroy'
+
   devise_for :users
   root 'static_pages#home'
   get  '/home',    to:   'static_pages#home'
