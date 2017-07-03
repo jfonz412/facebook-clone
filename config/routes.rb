@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   get    '/users',      to:   'users#index'
-  #resources  :users, :only[:show, :index] # might need an actual user model for this..?
+  get    '/user/:id',   to:    'users#show', as: 'user'
   post   '/friendship', to:   'friendships#create'
   delete '/friendship', to:   'friendships#destroy'
   get    '/home',       to:   'static_pages#home'

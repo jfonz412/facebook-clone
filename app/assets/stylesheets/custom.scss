@@ -7,6 +7,7 @@
   background-color: #3b5998;
   color: white;
   a {
+    margin-top: 3px;
     color: white;
     &:hover{
       color:#3b5998;
@@ -51,6 +52,10 @@ h1 {
 
 p {
 	margin-left:10px;
+}
+
+.user-list {
+	list-style-type: none;
 }
 
 /* devise forms */
