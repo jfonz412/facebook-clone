@@ -2,11 +2,17 @@
 <h2>Friends</h2>
 <ul class="user-list">
 	<% @user.friends.each do |friend| %>
-		<li><%= link_to friend.email, user_path(friend) %></li>
+		<li><%= link_to friend.email, user_path(friend) %>
+			<%= link_to "(remove friend)", 
+				friendship_path(:friend_id => friend.id), method: :delete %>
+		</li>
 	<% end %>
 </ul>
 <ul class="user-list">
 	<% @user.inverse_friends.each do |friend| %>
-		<li><%= link_to friend.email, user_path(friend) %></li>
+		<li><%= link_to friend.email, user_path(friend) %>
+			<%= link_to "(remove friend)", 
+				friendship_path(:friend_id => friend.id), method: :delete %>
+		</li>
 	<% end %>
 </ul>

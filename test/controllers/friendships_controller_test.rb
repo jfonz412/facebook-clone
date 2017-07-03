@@ -16,4 +16,10 @@ class FriendshipsControllerTest < ActionDispatch::IntegrationTest
 			post friendship_path, params: { :friend_id => @other_user.id }
 		end
 	end
+	test "can't have duplicate friendships" do
+		sign_in @user
+		assert_no_difference "Friendship.count" do
+			post friendship_path, params: { :friend_id => @other_user.id }
+		end
+	end
 end
