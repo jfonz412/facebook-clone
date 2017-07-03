@@ -26,4 +26,9 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", user_path(users(:sally))  # friend
     assert_select "a[href=?]", user_path(users(:stevie)) # inverse friend
 	end
+
+	test "must be signed in" do
+		get user_path(@user)
+    assert_response :redirect
+  end
 end
