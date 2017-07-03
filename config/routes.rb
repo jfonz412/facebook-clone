@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   get    '/users',      to:   'users#index'
-  get    '/user/:id',   to:    'users#show', as: 'user'
+  get    '/user/:id',   to:   'users#show', as: 'user'
   post   '/friendship', to:   'friendships#create'
   delete '/friendship', to:   'friendships#destroy'
   get    '/home',       to:   'static_pages#home'
