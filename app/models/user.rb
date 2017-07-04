@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :friendships
+  has_many :friendships 
   has_many :friends, :through => :friendships
   # Reverse friendships so we can get at the other side of a relationship
   has_many :inverse_friendships, class_name: "Friendship", foreign_key: "friend_id"
