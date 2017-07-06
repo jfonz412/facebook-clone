@@ -81,5 +81,7 @@ class FriendshipsControllerTest < ActionDispatch::IntegrationTest
 		friendships(:three).reload
 		assert friendships(:three).accepted?
 		assert_redirected_to @sally
+		follow_redirect!
+		assert_select "a", text: '(remove friend)'
 	end
 end
