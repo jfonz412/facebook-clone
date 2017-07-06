@@ -13,9 +13,9 @@
     <% flash.each do |message_type, message| %>
       <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
     <% end %>
-    <!--devise notices -->
+    <!--devise notices 
     <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <p class="alert"><%= alert %></p>-->
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>
