@@ -80,5 +80,6 @@ class FriendshipsControllerTest < ActionDispatch::IntegrationTest
 		end
 		friendships(:three).reload
 		assert friendships(:three).accepted?
+		assert_redirected_to @sally
 	end
 end
