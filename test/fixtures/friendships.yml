@@ -2,15 +2,19 @@
 one:
   user:   bob
   friend: sally
+  accepted: true
 
 two:
   user:   stevie
   friend: mike
+  accepted: true
 
 three:
   user:   mike
   friend: sally
+  accepted: true
 
 four:
   user:   stevie
   friend: bob
+  accepted: true
