@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get    '/user/:id',   to:   'users#show', as: 'user'
   post   '/friendship', to:   'friendships#create'
   delete '/friendship', to:   'friendships#destroy'
+  patch  '/friendship', to:   'friendships#update'
   get    '/home',       to:   'static_pages#home'
   get    '/about',      to:   'static_pages#about'
   get    '/contact',    to:   'static_pages#contact'

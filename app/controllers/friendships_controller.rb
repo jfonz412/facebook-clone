@@ -13,6 +13,13 @@ class FriendshipsController < ApplicationController
   	end
   end
 
+  def update
+    @friendship = Friendship.find(params[:id])
+    @friendship.update_attributes(accepted: true)
+    flash[:success] = "Request Accepted!"
+    redirect_to current_user
+  end
+
   def destroy
     @friendship = Friendship.find(params[:id]) # SECURITY ISSUE, NEED FIXING
     @friendship.destroy

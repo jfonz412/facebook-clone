@@ -12,7 +12,7 @@ two:
 three:
   user:   mike
   friend: sally
-  accepted: true
+  accepted: false
 
 four:
   user:   stevie
