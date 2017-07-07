@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-
 	root 'static_pages#home'
 
   devise_for :users
+  post   '/posts',      to:   'posts#create'
   get    '/users',      to:   'users#index'
   get    '/user/:id',   to:   'users#show', as: 'user'
   post   '/friendship', to:   'friendships#create'
