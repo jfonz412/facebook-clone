@@ -2,7 +2,7 @@
 <ul class="user-list">
 	<% @users.each do |user| %>
 		<% unless user == current_user %>
-			<li><%= link_to user.email, user_path(user) %>
+			<li><%= link_to user.name, user_path(user) %>
 			<% unless current_user.friends.include? user %>
 			<% unless current_user.inverse_friends.include? user %>
 				<%= link_to "(Add friend)", friendship_path(:friend_id => user.id), method: :post %>

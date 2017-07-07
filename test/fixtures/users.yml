@@ -5,15 +5,19 @@
 # below each fixture, per the syntax in the comments below
 #
 bob:
+  name: bob
   email: foo@bar.com
 
 sally:
+  name: sally
   email: sally@bar.com
 
 stevie:
+  name: stevie
   email: stevie@bar.com
 
 mike:
+  name: mike
   email: mike@bar.com
 
 
