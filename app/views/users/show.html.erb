@@ -1,4 +1,7 @@
 <h1><%= @user.name %></h1>
+<% if current_user == @user %>
+	<%= render 'shared/post_form' %>
+<% end %>
 <h2>Friends</h2>
 <ul class="user-list">
 	<% @user.friendships.accepted.each do |friendship| %>

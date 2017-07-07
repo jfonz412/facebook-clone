@@ -68,3 +68,14 @@ p {
 
 
 
+/* Posts */
+
+.form-group {
+  text-align: center;
+  width: 70%;
+  margin: auto;
+  .form-control {
+    margin: auto;
+    width: 50%;
+  }
+}
