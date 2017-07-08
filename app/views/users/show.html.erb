@@ -2,6 +2,16 @@
 <% if current_user == @user %>
 	<%= render 'shared/post_form' %>
 <% end %>
+
+<!-- LIST POSTS FOR USER HERE -->
+<div class="user-timeline">
+	<ul>
+		<% @user.posts.each do |post| %>
+			<li><%= post.content %><br></li>
+		<% end %>
+	</ul>
+</div>
+
 <h2>Friends</h2>
 <ul class="user-list">
 	<% @user.friendships.accepted.each do |friendship| %>

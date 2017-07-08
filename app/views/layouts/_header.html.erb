@@ -5,7 +5,7 @@
 			  <li role="presentation"><%= link_to "Home", home_path %></li>
 			  <% if user_signed_in? %>
 					<li role="presentation"><%= link_to "Profile#{notifications}", current_user %></li>
-			  	<li role="presentation"><%= link_to "Add Friends", users_path %>
+			  	<li role="presentation"><%= link_to "Add Friends", users_path %></li>
 			    <li role="presentation"><%= link_to "Sign Out", destroy_user_session_path, method: :delete%></li>
 			  <% else %>
 			    <li role="presentation"><%= link_to "Sign In", new_user_session_path %></li>
@@ -15,3 +15,4 @@
 		</div>
 	</nav>
 </header>
+
