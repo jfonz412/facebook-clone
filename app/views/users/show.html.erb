@@ -4,13 +4,16 @@
 <% end %>
 
 <!-- LIST POSTS FOR USER HERE -->
-<div class="user-timeline">
-	<ul>
-		<% @user.posts.each do |post| %>
-			<li><%= post.content %><br></li>
-		<% end %>
-	</ul>
-</div>
+
+<ul class="list-group">
+	<% @user.posts.each do |post| %>
+		<li class="list-group-item">
+		<%= post.content %><br>
+		<span class="date"><%= "posted #{post.formatted_date}" %></span>
+		</li>
+	<% end %>
+</ul>
+
 
 <h2>Friends</h2>
 <ul class="user-list">

@@ -3,10 +3,10 @@ class Post < ApplicationRecord
 
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 8000 }
-  
+
   belongs_to :user
 
   def formatted_date
-		date.strftime("%m/%d/%Y %H:%M%P")
+		created_at.strftime("%m/%d/%Y %H:%M%P")
 	end
 end
