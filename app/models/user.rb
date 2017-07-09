@@ -12,4 +12,20 @@ class User < ApplicationRecord
   has_many :inverse_friends, :through => :inverse_friendships, source: :user
 
   has_many :posts
+
+  # returns an array of both friends and inverse friends
+  def all_friends 
+    all_friends = []
+    self.friends.each do |friend|
+      all_friends << friend
+    end
+    self.inverse_friends.each do |friend|
+      all_friends << friend
+    end
+    all_friends
+  end 
+
+  def feed
+    Post.where("user_id IN (?) OR user_id = ?", all_friends, self)
+  end
 end
