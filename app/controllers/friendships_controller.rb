@@ -1,6 +1,6 @@
 class FriendshipsController < ApplicationController
   before_action :authenticate_user!
-  before_action :check_for_existing_friendships, only: :create
+  before_action :check_for_existing_friendships, only: :create # neccessary anymore?
 
   def create
   	@friendship = current_user.friendships.build(friend_id: params[:friend_id])

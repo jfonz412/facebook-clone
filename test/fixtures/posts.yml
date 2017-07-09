@@ -1,2 +1,31 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+<% 10.times do |n| %>
+bob_post_<%= n %>:
+  user: bob
+  content: "This is post number <%= n %> for bob"
+  created_at: <%= Time.zone.now %>
+<% end %>
 
+<% 10.times do |n| %>
+sally_post_<%= n %>:
+  user: sally
+  content: "This is post number <%= n %> for sally"
+  created_at: <%= Time.zone.now %>
+<% end %>
+
+<% 10.times do |n| %>
+mike_post_<%= n %>:
+  user: mike
+  content: "This is post number <%= n %> for mike"
+  created_at: <%= Time.zone.now %>
+<% end %>
+
+old_post:
+  user: bob
+  content: "This is an older post"
+  created_at: <%= 42.days.ago %>
+
+older_post:
+  user: sally
+  content: "This is an even older post"
+  created_at: <%= 2.years.ago %>

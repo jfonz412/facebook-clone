@@ -2,7 +2,6 @@
 <% if user_signed_in? %>
 	<h1>Hello, <%= current_user.name %></h1>
 	<%= render 'shared/post_form' %>
-
 	<ul class="list-group">
 		<% @user_feed.each do |post| %>
 			<li class="list-group-item">
@@ -12,7 +11,6 @@
 			</li>
 		<% end %>
 	</ul>
-
 <% else %>
 	<h1>Welcome to Facebook</h1>
 <% end %>
