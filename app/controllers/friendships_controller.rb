@@ -21,8 +21,9 @@ class FriendshipsController < ApplicationController
   end
 
   def destroy
-    @friendship = Friendship.find(params[:id]) # SECURITY ISSUE, NEED FIXING
-    @friendship.destroy
+  	@friendship = current_user.friendships.where("id = ?", params[:id])
+    @friendship = current_user.inverse_friendships.where("id = ?", params[:id]) if @friendship[0].nil?
+    Friendship.destroy(@friendship[0].id)
   	flash[:success] = "Friend removed"
   	redirect_to current_user
   end
