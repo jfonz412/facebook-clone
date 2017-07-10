@@ -7,7 +7,7 @@
 	<% @user.posts.each do |post| %>
 		<li class="list-group-item">
 		<%= post.content %><br>
-		<!-- Like button -->
+		<%= link_to "Like", "#",  class: "like-button" %><br>
 		<span class="date">
 			<%= "posted #{post.formatted_date}" %>
 			<% if current_user == @user %>

@@ -7,8 +7,7 @@
 			<li class="list-group-item">
 			<%= link_to post.user.name, post.user, :style => 'font-weight:bold; color:rgb(54, 88, 153)' %><br>
 			<%= post.content %><br>
-			<!-- like button -->
-			<%= link_to "Like", "#",  class: "like-button" %><br>
+			<%= link_to "Like", likes_create_path(:post_id => post.id),  class: "like-button" %><br>
 			<span class="date">
 				<%= "posted #{post.formatted_date}" %>
 			</span>

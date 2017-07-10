@@ -2,11 +2,13 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   validates :name, presence: true, length: { minimum: 2, maximum: 35 }
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :posts
-
+  has_many :likes
+  
   has_many :friends,         -> { where("accepted = ?", true) }, :through => :friendships
   has_many :inverse_friends, -> { where("accepted = ?", true) }, :through => :inverse_friendships, source: :user
   
@@ -16,6 +18,7 @@ class User < ApplicationRecord
   has_many :pending_friends,         -> { where("accepted = ?", false) }, :through => :friendships, source: :friend
   has_many :inverse_pending_friends, -> { where("accepted = ?", false) }, :through => :inverse_friendships, source: :user
   
+
   # Returns an array of both friends and inverse friends
   def all_friends 
     friends = []
