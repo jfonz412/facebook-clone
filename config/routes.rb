@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   post   '/posts',      to:   'posts#create'
+  delete '/posts',      to:   'posts#destroy'
   get    '/users',      to:   'users#index'
   get    '/user/:id',   to:   'users#show', as: 'user'
   post   '/friendship', to:   'friendships#create'

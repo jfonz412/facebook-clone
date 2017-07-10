@@ -6,7 +6,12 @@
 	<% @user.posts.each do |post| %>
 		<li class="list-group-item">
 		<%= post.content %><br>
-		<span class="date"><%= "posted #{post.formatted_date}" %></span>
+		<span class="date">
+			<%= "posted #{post.formatted_date}" %>
+			<% if current_user == @user %>
+				<%= link_to "(delete this post)", posts_path(:id => post.id), method: :delete %>
+			<% end %>
+		</span>
 		</li>
 	<% end %>
 </ul>
