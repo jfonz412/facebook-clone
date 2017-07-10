@@ -22,6 +22,9 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
   	assert_raise do
   		post like_path(:post_id => @post.id)
   	end
+    assert_difference "Like.count", -1 do
+      delete unlike_path(:post_id => @post.id)
+    end
   end
 
   #would like to test for like_path, having trouble with assert_select
