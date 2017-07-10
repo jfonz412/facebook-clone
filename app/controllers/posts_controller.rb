@@ -5,9 +5,9 @@ class PostsController < ApplicationController
   	@post = current_user.posts.build(post_params)
   	if @post.save
   		flash[:success] = "Post created!"
-  		redirect_back(fallback_location: root_url) #should keep user on either home or profile, wherever submitted
+  		redirect_back(fallback_location: root_url) 
   	else
-  		flash[:danger] = "#{@post.errors.full_messages}"
+  		flash[:danger] = "#{@post.errors.full_messages}" #clean up
       redirect_back(fallback_location: root_url)
   	end
   end
@@ -19,6 +19,6 @@ class PostsController < ApplicationController
 
   private
   	def post_params
-		params.require(:post).permit(:content)
+		  params.require(:post).permit(:content)
   	end
 end

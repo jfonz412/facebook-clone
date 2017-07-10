@@ -19,13 +19,11 @@ class FriendshipsControllerTest < ActionDispatch::IntegrationTest
 	end
 	 
 	test "can't have duplicate friendships" do
-		# Technically passes, DB throws error when same exact friendship is attempted
-		# In practice, the controller will stop this too
-		#sign_in @bob
-		#assert_no_difference "Friendship.count" do
-			#post friendship_path, params: { :friend_id => @sally.id }
-		#end
-		# Reverse friendships are stopped by controller first
+		sign_in @bob
+		assert_raise do
+			post friendship_path, params: { :friend_id => @sally.id }
+		end
+		# Reverse friendships are stopped by controller first (not sure if still needed)
 		sign_in @sally
 		assert_no_difference "Friendship.count" do
 			post friendship_path, params: { :friend_id => @bob.id }

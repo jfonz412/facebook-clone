@@ -16,7 +16,6 @@
 	<% end %>
 </ul>
 <h2>Friends</h2>
-
 <ul class="user-list">
 	<% @user.friendships.accepted.each do |friendship| %>
 		<li><%= link_to friendship.friend.name, user_path(friendship.friend) %>
@@ -36,7 +35,6 @@
 		</li>
 	<% end %>
 </ul>
-
 <!-- Friend requests, extract out to seperate page -->
 <% if current_user == @user %>
 	<h3>Friend Requests</h3>
@@ -45,7 +43,7 @@
 			<li><%= link_to friendship.user.name, user_path(friendship.user) %>
 					<%= link_to "(Accept)", friendship_path(:id => friendship.id), method: :patch %>
 					<%= link_to "(Deny)", friendship_path(:id => friendship.id), method: :delete %>
-				<% end %>
 			</li>
+		<% end %>
 	</ul>
 <% end %>
