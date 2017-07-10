@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :likes
-  
+
   has_many :friends,         -> { where("accepted = ?", true) }, :through => :friendships
   has_many :inverse_friends, -> { where("accepted = ?", true) }, :through => :inverse_friendships, source: :user
   
@@ -46,4 +46,12 @@ class User < ApplicationRecord
   def feed
     Post.where("user_id IN (?) OR user_id = ?", all_friends, self)
   end
+
+  def likes?(post_id)
+    self.likes.each do |like|
+      return true if like.post_id == post_id
+    end
+    return false
+  end
+
 end

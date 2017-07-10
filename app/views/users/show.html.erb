@@ -7,7 +7,11 @@
 	<% @user.posts.each do |post| %>
 		<li class="list-group-item">
 		<%= post.content %><br>
-		<%= link_to "Like", "#",  class: "like-button" %><br>
+			<% if current_user.likes?(post.id) %>
+				<%= link_to "Unlike", unlike_path(:post_id => post.id), method: :delete, class: "like-button" %><br>
+			<% else %>
+				<%= link_to "Like", like_path(:post_id => post.id), method: :post, class: "like-button" %><br>
+			<% end %>
 		<span class="date">
 			<%= "posted #{post.formatted_date}" %>
 			<% if current_user == @user %>
