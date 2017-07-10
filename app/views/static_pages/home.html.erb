@@ -5,7 +5,7 @@
 	<ul class="list-group">
 		<% @user_feed.each do |post| %>
 			<li class="list-group-item">
-			<%= post.user.name %><br>
+			<%= link_to post.user.name, post.user, :style => 'font-weight:bold; color:rgb(54, 88, 153)' %><br>
 			<%= post.content %><br>
 			<span class="date">
 				<%= "posted #{post.formatted_date}" %>

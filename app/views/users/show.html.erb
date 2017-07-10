@@ -2,6 +2,7 @@
 <% if current_user == @user %>
 	<%= render 'shared/post_form' %>
 <% end %>
+<!-- USER FEED -->
 <ul class="list-group">
 	<% @user.posts.each do |post| %>
 		<li class="list-group-item">
@@ -15,6 +16,7 @@
 		</li>
 	<% end %>
 </ul>
+<!-- FRIENDS LIST -->
 <h2>Friends</h2>
 <ul class="user-list">
 	<% @user.friendships.accepted.each do |friendship| %>
@@ -25,7 +27,6 @@
 		</li>
 	<% end %>
 </ul>
-
 <ul class="user-list">
 	<% @user.inverse_friendships.accepted.each do |friendship| %>
 		<li><%= link_to friendship.user.name, user_path(friendship.user) %>
