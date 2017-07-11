@@ -6,6 +6,7 @@ class Post < ApplicationRecord
 
   belongs_to :user
   has_many   :likes
+  has_many   :comments
   
   def formatted_date
 		created_at.strftime("%m/%d/%Y %H:%M%P")
