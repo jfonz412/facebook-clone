@@ -1,32 +1,11 @@
 <h1><%= @user.name %></h1>
+
 <% if current_user == @user %>
 	<%= render 'shared/post_form' %>
 <% end %>
-<!-- USER FEED -->
-<ul class="list-group">
-	<% @user.posts.each do |post| %>
-		<li class="list-group-item">
-			<%= post.content %><br>
-			<% if current_user.likes?(post.id) %>
-				<%= link_to "Unlike", unlike_path(:post_id => post.id), method: :delete, class: "like-button" %>
-			<% else %>
-				<%= link_to "Like", like_path(:post_id => post.id), method: :post, class: "like-button" %>
-			<% end %>
-			<%= link_to "Comment", "#", method: :post, class: "like-button" %><br>
-			<span class="likes">
-				<% unless post.likes.count == 0 %>
-					<%= post.likes.count %> <%= "person".pluralize(post.likes.count) %> <%= like_or_likes(post.likes.count) %> this<br>
-				<% end %>
-			</span>
-			<span class="date">
-				<%= "posted #{post.formatted_date}" %>
-				<% if current_user == @user %>
-					<%= link_to "(delete this post)", posts_path(:id => post.id), method: :delete %>
-				<% end %>
-			</span>
-		</li>
-	<% end %>
-</ul>
+
+<%= render 'user_feed' %>
+
 <!-- FRIENDS LIST -->
 <h2>Friends</h2>
 <ul class="user-list">
