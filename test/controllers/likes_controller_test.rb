@@ -9,16 +9,22 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
 	end
 
   test "must be logged in to like a post" do
-  	assert_raise do
+    get root_url
+    assert_select "a.like-button", count: 0
+  	assert_no_difference "Like.count" do
   		post like_path(:post_id => @post.id)
   	end
   end
 
   test "like a post (but only once)" do
   	sign_in @bob
+    get root_url
+    assert_select "a.like-button"
   	assert_difference "Like.count", 1 do
   		post like_path(:post_id => @post.id)
   	end
+    follow_redirect!
+    assert_select "a.like-button", text: "Unlike"
   	assert_raise do
   		post like_path(:post_id => @post.id)
   	end
@@ -26,6 +32,4 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
       delete unlike_path(:post_id => @post.id)
     end
   end
-
-  #would like to test for like_path, having trouble with assert_select
 end
