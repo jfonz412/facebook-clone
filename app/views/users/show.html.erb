@@ -7,7 +7,7 @@
 <%= render 'user_feed' %>
 
 <!-- FRIENDS LIST -->
-<div id="friends-list">
+<div class="friends-list">
 	<h2>Friends</h2>
 	<ul class="user-list">
 		<% @user.friendships.accepted.each do |friendship| %>
@@ -28,6 +28,7 @@
 		<% end %>
 	</ul>
 </div>
+
 <!-- Friend requests, extract out to seperate page -->
 <% if current_user == @user %>
 	<h3>Friend Requests</h3>
