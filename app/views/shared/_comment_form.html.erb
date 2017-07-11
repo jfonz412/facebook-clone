@@ -1,13 +1,7 @@
-<!--
-<div class="form-group">
-  <label for="comment">Comment:</label>
-  <textarea class="form-control" rows="3" id="comment-form"></textarea>
-</div> 
--->
-
 <%= form_for @comment do |f| %>
 	<div class="form-group" id="comment-form">
-	<%= f.text_area :content, placeholder: "Leave a comment", class: "form-control", rows: 3 %><br />
+		<%= f.hidden_field :post_id, :value => post.id %>
+		<%= f.text_area :content, placeholder: "Leave a comment", class: "form-control", rows: 3 %><br />
     <%= f.submit "Submit" %>
-  	</div>
+  </div>
 <% end %>

@@ -18,7 +18,7 @@
 				<span class="date">
 					<%= "posted #{post.formatted_date}" %>
 				</span>
-				<%= render 'shared/comment_form' %>
+				<%= render partial: 'shared/comment_form', locals: {post: post} %>
 			</li>
 		<% end %>
 	</ul>
