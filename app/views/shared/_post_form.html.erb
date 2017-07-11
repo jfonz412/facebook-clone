@@ -1,6 +1,6 @@
 <%= form_for @post do |f| %>
-	<div class="form-group">
+	<div class="form-group" id="post-form">
 		<%= f.text_area :content, placeholder: "What's on your mind?", class: "form-control", rows: 5 %><br />
-    <%= f.submit "Submit" %>
-  </div>
+    	<%= f.submit "Submit" %>
+    </div>
 <% end %>

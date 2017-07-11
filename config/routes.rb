@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   get    '/contact',    to:   'static_pages#contact'
   post   '/like',       to:   'likes#create'  
   delete '/unlike',     to:   'likes#destroy'
+  post   '/comments',    to:   'comments#create'
+  delete '/comments',    to:   'comments#destroy'
 end

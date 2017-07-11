@@ -2,6 +2,7 @@ class StaticPagesController < ApplicationController
 	def home 
 		if user_signed_in?
 			@post = Post.new
+			@comment = Comment.new
 			@user_feed = current_user.feed
 		end
 	end
