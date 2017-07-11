@@ -8,15 +8,17 @@
 			<%= link_to post.user.name, post.user, :style => 'font-weight:bold; color:rgb(54, 88, 153)' %><br>
 			<%= post.content %><br>
 			<% if current_user.likes?(post.id) %>
-				<%= link_to "Unlike", unlike_path(:post_id => post.id), method: :delete, class: "like-button" %>
+				<%= link_to "Unlike", unlike_path(:post_id => post.id), method: :delete, class: "like-button" %><br>
 			<% else %>
-				<%= link_to "Like", like_path(:post_id => post.id), method: :post, class: "like-button" %>
+				<%= link_to "Like", like_path(:post_id => post.id), method: :post, class: "like-button" %><br>
 			<% end %>
-			<span class="date">
+			<span class="likes">
 				<% unless post.likes.count == 0 %>
-					<%= post.likes.count %> <%= "person".pluralize(post.likes.count) %> <%= like_or_likes(post.likes.count) %> this
+					<%= post.likes.count %> <%= "person".pluralize(post.likes.count) %> <%= like_or_likes(post.likes.count) %> this<br>
 				<% end %>
-				<br><%= "posted #{post.formatted_date}" %>
+			</span>
+			<span class="date">
+				<%= "posted #{post.formatted_date}" %>
 			</span>
 			</li>
 		<% end %>
