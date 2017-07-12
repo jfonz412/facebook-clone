@@ -6,9 +6,8 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
 	def setup
 		@bob = users(:bob)
 		@post = posts(:sally_post_0)
-		@comment = Comment.new(user_id: @bob.id,
-							   post_id: @post.id,
-							   content: "Test post for testing")
+		@comment = Comment.new(user_id: @bob.id, post_id: @post.id, 
+													 content: "Test comment")
 	end
 
 	test "must be signed in to see comment form" do
@@ -31,6 +30,26 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
 		assert_difference "Comment.count", 1 do
 			post comments_path, params: { comment: { content: "This should pass",
 																						 	 post_id: @post.id } }
+		end
+		get root_url
+		assert_match "This should pass", response.body
+	end
+
+	test "can't delete a comment unless logged in" do
+		@comment.save
+		assert_no_difference "Comment.count" do
+			delete comments_path, params: { comment_id: @comment.id } 
+		end
+		sign_in @bob
+		assert_difference "Comment.count", -1 do
+			delete comments_path, params: { comment_id: @comment.id } 
+		end
+	end
+
+	test "can't delete another user's comments" do
+		@comment.save
+		assert_no_difference "Comment.count" do
+			delete comments_path, params: { comment_id: @comment.id } 
 		end
 	end
 end

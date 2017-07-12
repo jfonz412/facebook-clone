@@ -5,6 +5,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
  def setup
  	@user = users(:bob)
+  @post = posts(:bob_post_0)
  	@non_friend = users(:mike)
  end
 
@@ -43,11 +44,17 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     sign_in @user
     post_count = @user.posts.count
     assert_difference "Like.count", 1 do
-        post like_path(:post_id => posts(:bob_post_0).id)
+        post like_path(:post_id => @post.id)
+    end
+    assert_difference "Comment.count", 1 do
+      post comments_path, params: { comment: { content: "This should pass",
+                                               post_id: @post.id } }
     end
     assert_difference "@user.posts.count", -post_count do
-      assert_difference "Like.count", -1 do
-        delete user_registration_path(@bob)
+      assert_difference "Comment.count", -1 do
+        assert_difference "Like.count", -1 do
+          delete user_registration_path(@bob)
+        end
       end
     end
   end

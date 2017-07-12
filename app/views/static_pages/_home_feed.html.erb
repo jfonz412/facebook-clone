@@ -18,6 +18,21 @@
 				<span class="date">
 					<%= "posted #{post.formatted_date}" %>
 				</span>
+				<!-- Comments -->
+				<ul class="list-group">
+					<% post.comments.each do |comment| %>
+						<li class="list-group-item" style="border:none;">
+							<%= link_to comment.user.name, comment.user, :style => 'font-weight:bold; color:rgb(54, 88, 153)' %><br>
+							<%= comment.content %><br>
+							<span class="date">
+								<%= "#{comment.formatted_date}" %>
+								<% if current_user == comment.user %>
+									<%= link_to "(delete)", comments_path(:comment_id => comment.id), method: :delete %>
+								<% end %>
+							</span>		
+						</li>
+					<% end %>
+				</ul>
 				<%= render partial: 'shared/comment_form', locals: {post: post} %>
 			</li>
 		<% end %>

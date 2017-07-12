@@ -13,6 +13,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @comment = current_user.comments.find(params[:comment_id])
+    Comment.destroy(@comment.id)
+    flash[:success] = "Comment deleted!"
+    redirect_back(fallback_location: root_path)
   end
 
   private
