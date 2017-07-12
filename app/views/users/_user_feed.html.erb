@@ -20,6 +20,8 @@
 						<%= link_to "(delete this post)", posts_path(:id => post.id), method: :delete %>
 					<% end %>
 				</span>
+				<!-- Comments -->
+				<%= render partial: 'shared/comments', locals: {post: post} %>
 				<%= render partial: 'shared/comment_form', locals: {post: post} %>
 			</li>
 		<% end %>
