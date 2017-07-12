@@ -109,15 +109,19 @@ p {
 }
 
 .user-feed {
-
+	float: right;
   width: calc(100% - 300px);
 }
 
 /* friends list */
 #friends-list {
-  background-color: white;
+  
 }
-/*
-  margin-right: 50px;
-  margin-left: 30%;
-  */
+
+.span4 {
+	background-color: white;
+	position: absolute;
+	display: inline-block;
+	padding: 4%;
+	margin:auto;
+}
