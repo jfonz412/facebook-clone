@@ -99,4 +99,14 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 		follow_redirect!
 		assert_select "a", text: "(delete this post)", count: 10
 	end
+
+	test "can delete liked posts" do 
+		sign_in @bob
+		assert_difference "Like.count", 1 do
+  		post like_path(:post_id => @post.id)
+  	end
+ 		assert_difference "Post.count", -1 do
+			delete posts_path(:id => @post.id) 
+		end
+  end
 end

@@ -13,7 +13,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    Post.destroy current_user.posts.where("id = ?", params[:id])
+    @post = current_user.posts.where("id = ?", params[:id])
+    Post.destroy(@post[0].id)
     redirect_to user_path(current_user)
   end
 

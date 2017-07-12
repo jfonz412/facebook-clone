@@ -38,4 +38,17 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 		get user_path(@user)
     assert_response :redirect
   end
+
+  test "deleting user should delete user's activity" do
+    sign_in @user
+    post_count = @user.posts.count
+    assert_difference "Like.count", 1 do
+        post like_path(:post_id => posts(:bob_post_0).id)
+    end
+    assert_difference "@user.posts.count", -post_count do
+      assert_difference "Like.count", -1 do
+        delete user_registration_path(@bob)
+      end
+    end
+  end
 end

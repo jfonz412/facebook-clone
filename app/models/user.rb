@@ -6,9 +6,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :posts
-  has_many :likes
-  has_many :comments
+  has_many :posts,    dependent: :destroy
+  has_many :likes,    dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   has_many :friends,         -> { where("accepted = ?", true) }, :through => :friendships
   has_many :inverse_friends, -> { where("accepted = ?", true) }, :through => :inverse_friendships, source: :user
