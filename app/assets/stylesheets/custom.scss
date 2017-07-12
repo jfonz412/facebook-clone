@@ -114,9 +114,7 @@ p {
 }
 
 /* friends list */
-#friends-list {
-  
-}
+
 
 .span4 {
 	background-color: white;
@@ -124,4 +122,10 @@ p {
 	display: inline-block;
 	padding: 4%;
 	margin:auto;
+	.friends-list {
+		background-color: white;
+		li {
+		list-style-type: none;
+		}
+	}
 }

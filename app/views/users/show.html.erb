@@ -9,6 +9,7 @@
 
 	<!-- FRIENDS LIST -->
 	<div class="span4">
+	<div class="friends-list" >
 		<h2>Friends</h2>
 		<ul class="user-list">
 			<% @user.friendships.accepted.each do |friendship| %>
@@ -28,6 +29,7 @@
 				</li>
 			<% end %>
 		</ul>
+		</div>
 	</div>
 </div>
 	<!-- Friend requests, extract out to seperate page -->
