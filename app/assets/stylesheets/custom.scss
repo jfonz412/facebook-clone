@@ -12,6 +12,8 @@
 }
 
 .navbar-default .navbar-nav > li > a {
+	font-size: 12px;
+	font-weight:bold;
 	color: white;
 }
 
@@ -45,14 +47,15 @@
 }
 
 .col-md-4 {
-	background-color: white;
-	padding: 40px;
-	margin:auto;
-	margin-top: 30%;
-	background-color: white;
+	.friends-list {
+		background-color: white;
+		padding:10%;
+		margin:auto;
+		margin-top: 70%;
 		li {
-		list-style-type: none;
+			list-style-type: none;
 		}
+	}
 }
 
 /* user index list */
