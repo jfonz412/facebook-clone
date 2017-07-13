@@ -1,6 +1,6 @@
 <% provide(:title, "Home") %>
 <% if user_signed_in? %>
-	<div class="starter-template">
+	<div class="row" style="margin-top: 10%;">
 		<h1>Hello, <%= current_user.name %></h1>
 		<%= render 'shared/post_form' %>
 		<%= render 'home_feed' %>
