@@ -81,38 +81,6 @@
   }
 }
 
-/* footer */
-
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  color: grey;
-  background-color: white;
-  a {
-    color: gray;
-  }
-  ul {
-    float: left;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 15px;
-    }
-  }
-}
-
-#foot-container {
-	background-color: white;
-	height: 100px;
-}
-
-
-/* devise forms */
-.devise-form {
-	margin-left: 35px;
-}
-
-
 .date {
   font-size: 10px;
   font-style: italic;
@@ -130,6 +98,25 @@ footer {
 
 .likes {
   font-size: 12px
+}
+
+
+/* footer */
+
+.footer {
+	margin:auto;
+	padding: 1%;
+	background-color: white;
+	nav a {
+		padding: 1%;
+		color: grey;
+	}
+}
+
+
+/* devise forms */
+.devise-form {
+	margin-left: 35px;
 }
 
 
