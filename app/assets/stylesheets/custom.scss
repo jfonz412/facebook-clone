@@ -14,6 +14,10 @@
 	.navbar-brand:hover {
 		color:white;
 	}
+	.badge {
+		color: #3b5998;
+		background-color: white;
+	}
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -24,7 +28,7 @@
 
 .navbar-default .navbar-nav > li > a:hover {
 	color: white;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 /* Home page */
