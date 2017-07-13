@@ -4,18 +4,74 @@
 
 
 /* header */
-.navbar.navbar-default {
-  background-color: #3b5998;
-  color: white;
-  a {
-    margin-top: 3px;
-    color: white;
-    &:hover{
-      color:#3b5998;
-    } 
-  }
+.navbar-default {
+	background-color: #3b5998;	
+	.navbar-brand {
+		color:white;
+	}
 }
 
+.navbar-default .navbar-nav > li > a {
+	color: white;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+	color: white;
+	text-decoration: underline;
+}
+
+/* Home page */
+.starter-template {
+	margin-top:15%;
+}
+
+.home-feed {
+	margin: auto;
+  margin-top: 1%;
+  width: 60%;
+}
+
+/* Profile */
+
+.user-feed {
+  width: calc(100% - 200px);
+  margin:auto;
+  margin-top: 2%
+}
+
+/* friends list */
+.col-md-8 {
+	float:right;
+}
+
+.col-md-4 {
+	background-color: white;
+	padding: 40px;
+	margin:auto;
+	margin-top: 30%;
+	background-color: white;
+		li {
+		list-style-type: none;
+		}
+}
+
+/* user index list */
+
+.user-list {
+	list-style-type: none;
+}
+
+/* Posts */
+
+#post-form {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  .form-control {
+    margin: auto;
+    width: 80%;
+  }
+}
 
 /* footer */
 
@@ -42,40 +98,12 @@ footer {
 	height: 100px;
 }
 
-/* misc body elements */
-
-body {
-	background-color: rgb(233, 235, 238)
-}
-
-h1 {
-  text-align: center;
-}
-
-p {
-	margin-left:10px;
-}
-
-.user-list {
-	list-style-type: none;
-}
 
 /* devise forms */
 .devise-form {
 	margin-left: 35px;
 }
 
-/* Posts */
-
-#post-form {
-  text-align: center;
-  width: 70%;
-  margin: auto;
-  .form-control {
-    margin: auto;
-    width: 50%;
-  }
-}
 
 .date {
   font-size: 10px;
@@ -102,30 +130,18 @@ p {
   
 }
 
-/* feed */
-.home-feed {
-  margin: auto;
-  width: 50%;
+
+/* misc body elements */
+
+body {
+	background-color: rgb(233, 235, 238)
 }
 
-.user-feed {
-	float: right;
-  width: calc(100% - 300px);
+h1 {
+  text-align: center;
 }
 
-/* friends list */
-
-
-.span4 {
-	background-color: white;
-	position: absolute;
-	display: inline-block;
-	padding: 40px;
-	margin:auto;
-	.friends-list {
-		background-color: white;
-		li {
-		list-style-type: none;
-		}
-	}
+p {
+	margin-left:10px;
 }
+
