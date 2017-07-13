@@ -30,10 +30,10 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   test "notifications" do
     sign_in @sally
     get home_path
-    assert_match "Profile(1)", response.body
+    assert_select "span.badge"
     get user_path @sally
     patch friendship_path(:id => friendships(:three))
     follow_redirect!
-    assert_match "Profile", response.body
+    assert_match "Profile", response.body # not sure if this test actually works
   end
 end
