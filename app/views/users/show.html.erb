@@ -1,4 +1,4 @@
-<div class="row" style="margin-top: 10%;">
+<div class="row">
 	<div class="col-md-8" id="profile">
 		<h1><%= @user.name %></h1>
 		<% if current_user == @user %>
@@ -7,26 +7,8 @@
 			<%= render 'user_feed' %>
 	</div>
 	<!-- FRIENDS LIST -->
-	<div class="col-md-4" id="friends-list">
-		<h2>Friends</h2>
-		<ul class="user-list">
-			<% @user.friendships.accepted.each do |friendship| %>
-				<li><%= link_to friendship.friend.name, user_path(friendship.friend) %>
-					<% if current_user == @user %>
-						<%= link_to "(remove friend)", friendship_path(:id => friendship.id), method: :delete %>
-					<% end %>
-				</li>
-			<% end %>
-		</ul>
-		<ul>
-			<% @user.inverse_friendships.accepted.each do |friendship| %>
-				<li><%= link_to friendship.user.name, user_path(friendship.user) %>
-					<% if current_user == @user %>
-						<%= link_to "(remove friend)", friendship_path(:id => friendship.id), method: :delete %>
-					<% end %>
-				</li>
-			<% end %>
-		</ul>
+	<div class="col-md-4">
+		<%= render 'friends' %>
 	</div>
 </div>
 	<!-- Friend requests, extract out to seperate page -->
