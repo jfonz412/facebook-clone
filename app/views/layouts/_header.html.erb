@@ -17,10 +17,12 @@
 						<li class="dropdown">
 						  <%= link_to profile_and_notices, "#", class: "dropdown-toggle", data: { toggle: "dropdown" }  %>
 						  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-						    <li><a href="#">Action</a></li>
-						    <li><a href="#">Another action</a></li>
-						    <li><a href="#">Something else here</a></li>
-						    <li role="separator" class="divider"></li>
+							  <% if notifications %>
+							    <li><a href="#">New Friend Requests!</a></li>
+							    <li><a href="#">Someone liked your post!</a></li>
+							    <li><a href="#">New comments on your post!</a></li>
+							    <li role="separator" class="divider"></li>
+							  <% end %>    
 						    <li><%= link_to "Profile", current_user %></li>
 						  </ul>
 						</li>

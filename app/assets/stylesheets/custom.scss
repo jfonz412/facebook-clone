@@ -18,6 +18,10 @@
 		color: #3b5998;
 		background-color: white;
 	}
+	.dropdown-menu a {
+		color: #3b5998;
+		font-size:12px;
+	}
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -31,6 +35,9 @@
 	text-decoration: none;
 }
 
+.alert {
+	margin-top: 10%;
+}
 /* Home page */
 .starter-template {
 	margin-top:15%;
