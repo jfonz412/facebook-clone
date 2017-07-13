@@ -9,7 +9,7 @@
 				<% else %>
 					<%= link_to "Like", like_path(:post_id => post.id), method: :post, class: "like-button" %>
 				<% end %>
-				<%= link_to "Comment", "#", method: :post, class: "like-button" %><br>
+				<%= link_to "Comment", "#", class: "comment-button" %><br>
 				<span class="likes">
 					<% unless post.likes.count == 0 %>
 						<%= post.likes.count %> <%= "person".pluralize(post.likes.count) %> <%= like_or_likes(post.likes.count) %> this<br>

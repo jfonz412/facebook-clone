@@ -2,6 +2,6 @@
 	<div class="form-group" id="comment-form">
 		<%= f.hidden_field :post_id, :value => post.id %>
 		<%= f.text_area :content, placeholder: "Leave a comment", class: "form-control", rows: 3 %><br />
-    <%= f.submit "Submit" %>
+		<%= f.submit "Add comment" %>
   </div>
 <% end %>
