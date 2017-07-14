@@ -18,9 +18,9 @@
 						  <%= link_to profile_and_notices, "#", class: "dropdown-toggle", data: { toggle: "dropdown" }  %>
 						  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 							  <% if notifications %>
-							    <li><a href="#">New Friend Requests!</a></li>
-							    <li><a href="#">Someone liked your post!</a></li>
-							    <li><a href="#">New comments on your post!</a></li>
+							    <li><%= link_to "New Friend Requests!", "#" %></li>
+							    <li><%= link_to "Someone liked your post!", "#" %></li>
+							    <li><%= link_to "Someone commented on your post!", "#" %></li>
 							    <li role="separator" class="divider"></li>
 							  <% end %>    
 						    <li><%= link_to "Profile", current_user %></li>

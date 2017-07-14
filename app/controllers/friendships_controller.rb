@@ -6,6 +6,7 @@ class FriendshipsController < ApplicationController
   	@friendship = current_user.friendships.build(friend_id: params[:friend_id])
   	if @friendship.save
   		flash[:success] = "Friend request sent"
+      send_notice
   		redirect_to current_user
   	else
       flash[:danger] = "Something went wrong..."
@@ -37,5 +38,11 @@ class FriendshipsController < ApplicationController
         flash[:danger] = "Friendship already exists!"
         redirect_to users_path
       end
+    end
+
+    def send_notice
+      notice = @friendship.friend.notices.build(other_user_id: current_user.id,
+                    notice_type: "Friendship", type_id: @friendship.id)
+      notice.save
     end
 end

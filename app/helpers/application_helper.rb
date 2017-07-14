@@ -1,9 +1,9 @@
 module ApplicationHelper
 	def notifications
-		if current_user.inverse_friendships.pending.count == 0
+		if current_user.notices == 0
 			number_of_notices = nil
 		else
-			number_of_notices = "#{current_user.inverse_friendships.pending.count}"
+			number_of_notices = "#{current_user.notices.count}"
 		end
 	end
 
