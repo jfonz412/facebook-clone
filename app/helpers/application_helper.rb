@@ -1,6 +1,6 @@
 module ApplicationHelper
 	def notifications
-		if current_user.notices == 0
+		if current_user.notices.count == 0
 			number_of_notices = nil
 		else
 			number_of_notices = "#{current_user.notices.count}"
