@@ -1,3 +1,9 @@
+<script>
+  $('.comment-button').click(function() {
+      $("#comment_form").toggle();
+  });
+</script>
+
 <div class="user-feed">
 	<ul class="list-group">
 		<% @user.posts.each do |post| %>
