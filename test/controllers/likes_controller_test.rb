@@ -23,6 +23,7 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
   	assert_difference "Like.count", 1 do
   		post like_path(:post_id => @post.id)
   	end
+    assert Notice.count == 1
     follow_redirect!
     assert_select "a.like-button", text: "Unlike"
   	assert_raise do

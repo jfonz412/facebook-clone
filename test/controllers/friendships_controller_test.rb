@@ -16,6 +16,7 @@ class FriendshipsControllerTest < ActionDispatch::IntegrationTest
 		assert_difference "Friendship.count", 1 do
 			post friendship_path, params: { :friend_id => @mike.id }
 		end
+		assert Notice.count == 1
 	end
 	 
 	test "can't have duplicate friendships" do

@@ -31,6 +31,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
 			post comments_path, params: { comment: { content: "This should pass",
 																						 	 post_id: @post.id } }
 		end
+		assert Notice.count == 1
 		get root_url
 		assert_match "This should pass", response.body
 	end
