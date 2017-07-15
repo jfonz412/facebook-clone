@@ -1,0 +1,12 @@
+<!-- Friend requests, extract out to seperate page -->
+<div class="container">
+	<h1 class="static-heading">Friend Requests</h1>
+	<ul class="user-list">
+		<% @friend_requests.each do |request| %>
+			<li><%= link_to request.user.name, user_path(request.user) %>
+					<%= link_to "(Accept)", friendship_path(:id => request.id), method: :patch %>
+					<%= link_to "(Deny)", friendship_path(:id => request.id), method: :delete %>
+			</li>
+		<% end %>
+	</ul>
+</div>

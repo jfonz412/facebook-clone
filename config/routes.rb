@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   delete '/posts',      to:   'posts#destroy'
   get    '/users',      to:   'users#index'
   get    '/user/:id',   to:   'users#show', as: 'user'
+  get    '/requests',   to:   'friendships#index'
   post   '/friendship', to:   'friendships#create'
   delete '/friendship', to:   'friendships#destroy'
   patch  '/friendship', to:   'friendships#update'

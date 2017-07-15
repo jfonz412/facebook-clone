@@ -59,21 +59,22 @@ class FriendshipsControllerTest < ActionDispatch::IntegrationTest
 
 	test "denying friend requests" do
 		sign_in @sally
-		get user_path(@sally)
-		assert_select "a", text: '(Accept)'
-		assert_select "a", text: '(Deny)'
+		get requests_path
+		#assert_select "a", text: '(Accept)'
+		#assert_select "a", text: '(Deny)'
 		assert_difference "Friendship.count", -1 do
 			delete friendship_path(:id => friendships(:three))
 		end
-		assert_select "a", text: '(Accept)', count: 0
-		assert_select "a", text: '(Deny)'  , count: 0
+		get requests_path
+		#assert_select "a", text: '(Accept)', count: 0
+		#assert_select "a", text: '(Deny)'  , count: 0
 	end
 
 	test "accepting friend requests" do
 		sign_in @sally
-		get user_path(@sally)
-		assert_select "a", text: '(Accept)'
-		assert_select "a", text: '(Deny)'
+		get requests_path
+		#assert_select "a", text: '(Accept)'
+		#assert_select "a", text: '(Deny)'
 		assert_no_difference "Friendship.count" do
 			patch friendship_path(:id => friendships(:three))
 		end
