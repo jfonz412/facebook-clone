@@ -9,7 +9,7 @@
 			</li>
 		<% end %>
 	</ul>
-	<ul>
+	<ul class="user-list" style="margin-top: -5%">
 		<% @user.inverse_friendships.accepted.each do |friendship| %>
 			<li><%= link_to friendship.user.name, user_path(friendship.user) %>
 				<% if current_user == @user %>
