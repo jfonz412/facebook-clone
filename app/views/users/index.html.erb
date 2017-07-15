@@ -1,11 +1,14 @@
-<h1>Add Friends</h1>
+<h1 class="static-heading">Add Friends</h1>
 <ul class="user-list">
 	<% @users.each do |user| %>
 		<% unless user == current_user %>
-			<li><%= link_to user.name, user_path(user) %>
-			<% unless current_user.all_friends_including_pending.include? user %>
-				<%= link_to "(Add friend)", friendship_path(:friend_id => user.id), method: :post %>
-			<% end %>
+			<li>
+				<%= gravatar_for(user, 50) %><br>
+				<%= link_to user.name, user_path(user) %>
+				<% unless current_user.all_friends_including_pending.include? user %>
+					<%= link_to "(Add friend)", friendship_path(:friend_id => user.id), method: :post %>
+				<% end %>
+				<br><br>
 			</li>      
 		<% end %>
 	<% end %>
