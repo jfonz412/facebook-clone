@@ -2,6 +2,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/*static pages*/
+.static-heading {
+	margin-top: 8%;
+}
+
+/* devise */
+.devise-form {
+	margin-top: 10%;
+	margin-bottom: 1%;
+}
 
 /* header */
 .navbar-default {
@@ -142,12 +152,6 @@
 		padding: 1%;
 		color: grey;
 	}
-}
-
-
-/* devise forms */
-.devise-form {
-	margin-left: 35px;
 }
 
 
