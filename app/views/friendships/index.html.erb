@@ -4,9 +4,10 @@
 		<h1 class="static-heading">Friend Requests</h1>
 		<ul class="user-list">
 			<% @friend_requests.each do |request| %>
-				<li><%= link_to request.user.name, user_path(request.user) %>
+				<li><%= link_to request.user.name, user_path(request.user) %><br>
+						<%= gravatar_for(request.user, 50) %><br>
 						<%= link_to "(Accept)", friendship_path(:id => request.id), method: :patch %>
-						<%= link_to "(Deny)", friendship_path(:id => request.id), method: :delete %>
+						<%= link_to "(Deny)", friendship_path(:id => request.id), method: :delete %><br><br>
 				</li>
 			<% end %>
 		</ul>
