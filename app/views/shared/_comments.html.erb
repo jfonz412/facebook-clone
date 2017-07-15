@@ -1,7 +1,10 @@
 <ul class="list-group">
 	<% post.comments.each do |comment| %>
 		<li class="list-group-item" style="border:none;">
-			<%= link_to comment.user.name, comment.user, :style => 'font-weight:bold; color:rgb(54, 88, 153)' %><br>
+			<div class="feed-name">
+				<%= gravatar_for(comment.user, 30) %>
+				<%= link_to comment.user.name, comment.user %><br>
+			</div>
 			<%= comment.content %><br>
 			<span class="date">
 				<%= "#{comment.formatted_date}" %>

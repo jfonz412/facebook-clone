@@ -8,6 +8,10 @@
 	<ul class="list-group">
 		<% @user.posts.each do |post| %>
 			<li class="list-group-item">
+				<div class="feed-name">
+					<%= gravatar_for(post.user, 40) %>
+					<%= link_to post.user.name, post.user %><br>
+				</div>
 				<%= post.content %><br>
 				<% if current_user.likes?(post.id) %>
 					<%= link_to "Unlike", unlike_path(:post_id => post.id), method: :delete, class: "like-button" %>
