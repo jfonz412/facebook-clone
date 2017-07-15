@@ -3,7 +3,7 @@ class FriendshipsController < ApplicationController
   before_action :check_for_existing_friendships, only: :create # neccessary anymore?
 
   def index
-    @friend_requests = current_user.friendships.pending
+    @friend_requests = current_user.inverse_friendships.pending
   end
 
   def create
