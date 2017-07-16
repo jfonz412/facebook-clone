@@ -9,11 +9,8 @@
       <div class="container">
       <!-- needs an error message div -->
       <% flash.each do |message_type, message| %>
-        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %> <!--7.35-->
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %> 
       <% end %>
-      <!--devise notices 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>-->
       <%= yield %>
     </div>
       <%= render 'layouts/footer' %>
