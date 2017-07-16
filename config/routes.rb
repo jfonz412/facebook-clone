@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  get 'notices/destroy'
-
 	root 'static_pages#home'
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   post   '/posts',      to:   'posts#create'
   delete '/posts',      to:   'posts#destroy'
   get    '/users',      to:   'users#index'
@@ -19,4 +17,5 @@ Rails.application.routes.draw do
   delete '/unlike',     to:   'likes#destroy'
   post   '/comments',   to:   'comments#create'
   delete '/comments',   to:   'comments#destroy'
+  get 'notices/destroy'
 end

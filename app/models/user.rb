@@ -4,7 +4,8 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { minimum: 2, maximum: 35 }
   
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable,
+         :omniauthable, :omniauth_providers => [:facebook] # see omni docs
 
   has_many :posts,    dependent: :destroy
   has_many :likes,    dependent: :destroy
