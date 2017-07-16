@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 	root 'static_pages#home'
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   post   '/posts',      to:   'posts#create'
   delete '/posts',      to:   'posts#destroy'
   get    '/users',      to:   'users#index'
