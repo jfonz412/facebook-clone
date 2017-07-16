@@ -11,6 +11,9 @@ class NoticesControllerTest < ActionDispatch::IntegrationTest
 																	type_id: 7)
 	end
 
+  # notices are tested in other controller tests where
+  # a notice would be created
+
   test "must be logged in to delete notices" do
   	@notice.save
   	assert_no_difference "Notice.count" do

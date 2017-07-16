@@ -10,6 +10,7 @@ end
 gem 'rails', '~> 5.0.4'
 gem 'bootstrap-sass', '3.3.7'
 gem 'devise'
+gem 'omniauth-facebook'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
