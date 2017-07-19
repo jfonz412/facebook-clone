@@ -18,7 +18,7 @@ module ApplicationHelper
 			type = notice.notice_type
 			notices << notice_message(type)
 		end
-		notices << raw("<li role='separator' class='divider'></li>")
+		notices
 	end
 end
 
