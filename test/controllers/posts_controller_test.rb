@@ -22,6 +22,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 	test "post form on home and profile pages when logged in" do
 		sign_in @bob
 		get root_url
+		assert_select 'input[type="file"]'
 		assert_select "textarea"
 		get user_path(@bob)
 		assert_select "textarea"
@@ -30,9 +31,10 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 	test "valid post" do
 		sign_in @bob
 		get root_url
+		image = fixture_file_upload('test/fixtures/pug.jpg', 'image/jpg')
 		assert_difference "Post.count", 1 do
 			post posts_path, params: { user_id: @bob.id,
-									   post: { content: "This is a valid post!" } }
+									   post: { content: "This is a valid post!", image: image } }
 		end		
 		assert_redirected_to root_url
 		get user_path(@bob)
