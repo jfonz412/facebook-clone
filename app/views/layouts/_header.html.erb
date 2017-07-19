@@ -22,7 +22,8 @@
 							    	<li><%= raw(notice) %></li>
 							    <% end %>
 							    <li class="delete-notices"><%= link_to "Delete all notices", notices_destroy_path %></li>
-							  <% end %>    
+							  <% end %>   
+							<li><%= link_to "Friend Requests", requests_path %></li> 
 						    <li><%= link_to "Profile", current_user %></li>
 						  </ul>
 						</li>
