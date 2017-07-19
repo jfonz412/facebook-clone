@@ -11,7 +11,11 @@ gem 'rails', '~> 5.0.4'
 gem 'bootstrap-sass', '3.3.7'
 gem 'devise'
 gem 'omniauth-facebook'
-gem "letter_opener", :group => :development
+gem "letter_opener", :group => :development #must be placed here apparently
+# image upload
+gem 'carrierwave',             '1.1.0'
+gem 'mini_magick',             '4.7.0' # image resize
+gem 'fog',                     '1.40.0'# also resize
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
