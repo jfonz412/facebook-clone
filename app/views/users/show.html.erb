@@ -3,8 +3,6 @@
 		<%= @user.name %><br>
 		<%= gravatar_for @user %>
 	</h1>
-</div>
-<div class="row">
 	<div class="col-md-8" id="profile">
 		<% if current_user == @user %>
 			<%= render 'shared/post_form' %>
@@ -15,5 +13,4 @@
 	<div class="col-md-4">
 		<%= render 'friends' %>
 	</div>
-	<%= link_to "Friend Requests", requests_path %>
 </div>

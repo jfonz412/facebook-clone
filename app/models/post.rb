@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   default_scope -> { order(created_at: :desc) }
 
   # associate an image with this model through ImageUploader
-  mount_uploader :picture, ImageUploader 
+  mount_uploader :image, ImageUploader 
 
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 8000 }

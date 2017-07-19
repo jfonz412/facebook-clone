@@ -13,6 +13,7 @@
 					<%= link_to post.user.name, post.user %><br>
 				</div>
 				<%= post.content %><br>
+				<%= image_tag post.image.url if post.image? %>
 				<% if current_user.likes?(post.id) %>
 					<%= link_to "Unlike", unlike_path(:post_id => post.id), method: :delete, class: "like-button" %>
 				<% else %>
