@@ -10,6 +10,6 @@ User.delete_all
 Friendship.delete_all
 
 10.times do |n|
-	User.create(name: "User_#{n}", email: "email#{n}@fake.com", password: "pass123")
+	User.create(name: "User #{n}", email: "email#{n}@fake.com", password: "pass123")
 end
 
